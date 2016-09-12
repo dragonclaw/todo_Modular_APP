@@ -1,3 +1,4 @@
-<div ng-repeat="todo in todos" class="repeat">
-		<input type="checkbox" ng-model="todo.completed"> </select> <a href="#/{{$index}}">{{todo.name}}</a> 
+Search: <input type="text" ng-model="search.$">
+<div ng-repeat="todo in todos| filter:search" class="repeat" >
+		<input type="checkbox" ng-model="todo.completed"> </select> <a href="#/{{$index}}">{{todo.name}}</a>
 </div>
