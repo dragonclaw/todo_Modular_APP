@@ -1,12 +1,12 @@
-app.controller('DetailController',['$http','$scope','jsonTodos','jsonTodo','$routeParams',function($http,$scope,jsonTodos,jsonTodo,$routeParams){
+app.controller('DetailController',['$http','$rootScope','jsonTodos','$routeParams',function($http,$rootScope,jsonTodos,$routeParams){
 id=$routeParams.id;
 console.log(id);
-jsonTodo.success(function(data){
-  alert(data[id]._id);
+jsonTodos.get($rootScope.url,id).then(function(data){
+  $rootScope.todo = data;
   console.log(data);
 });
-$scope.saveTodo= function(id){
-  alert($scope.todo._id);
+$rootScope.saveTodo= function(id){
+  alert($rootScope.todo._id);
 };
 
 }]);

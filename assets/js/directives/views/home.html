@@ -2,4 +2,6 @@ Search: <input type="text" ng-model="search.$">
 <div ng-repeat="todo in todos| filter:search" class="repeat" >
 		<input type="checkbox" ng-model="todo.completed"> </select> <a href="#/{{todo._id}}">{{todo.name}}</a>
 </div>
-New task <input type="text" ng-model="newTodo"><button ng-click="save()">Create</button>
+<input type="checkbox" value="false"> <div class="newTodo"> {{newTodo}}
+New task <input id="newTodo" type="text" ng-model="newTodo"><button ng-click="save(newTodo)">Create</button>
+</div>
